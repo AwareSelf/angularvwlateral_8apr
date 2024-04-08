@@ -1,0 +1,38 @@
+<div>
+      <h1>Hi, {{ title }}</h1>
+      <hr/>
+      <h3> bookid:{{mybook.bkid}},bookname:{{mybook.bkname}},bookprice:{{mybook.bkprice}}</h3>
+
+    
+      <hr/>
+        @if(lstsz)
+        {
+            <p>The book list cart size is {{lstsz}}</p>
+        }
+        
+        
+           <app-booklist1 
+             [bkid]="mybook.bkid" 
+             [bkname]="mybook.bkname" 
+             [bkprice]="6000"
+             (booklen_evt) = setbklistsize($event)
+             >
+            </app-booklist1> 
+        
+         <!--  <app-booklist1 [bkprice]="1000"></app-booklist1> -->
+      
+      <hr/>
+      <div>
+         <input type="text" value={{title}} #ip1 /> <br/>
+         <!--<button (click)="chngtitle(ip1)">ChangeTitle</button> -->
+         <button (click)="chngtitle(ip1.value)">ChangeTitle - One Way Binding</button>
+      </div>
+      <hr/>
+      <div>
+        <input type="text" [(ngModel)]="title" /> <br/>
+
+        <button (click)="chngtitle1()">Change Title -  Two way binding</button>
+                
+     </div>
+</div>
+    

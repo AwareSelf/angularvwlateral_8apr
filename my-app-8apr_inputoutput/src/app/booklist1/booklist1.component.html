@@ -1,0 +1,30 @@
+@if(mybook)
+{
+<div>
+    <input type="text" [(ngModel)]="mybook.bkid" placeholder="book id"/>
+    <input type="text" [(ngModel)]="mybook.bkname" placeholder="book name"/>
+    <input type="text" [(ngModel)]="mybook.bkprice" placeholder="book price"/>
+    <button (click)="addbook()">Add Book</button>
+
+</div>
+}
+
+<hr/>
+
+@if(bookarr && bookarr.length > 0)
+{
+    <p>There are {{bookarr.length}} books in the book array:-</p> 
+
+    <ul>
+        @for(bk of bookarr; track bk.bkid)
+        {
+            <li>{{bk.bkid}},{{bk.bkname}},{{bk.bkprice}}</li> 
+            
+        }
+    </ul>
+}
+@else
+{
+    <p>0 books in the array!</p>
+}
+
