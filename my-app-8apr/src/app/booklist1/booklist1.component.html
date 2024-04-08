@@ -1,0 +1,41 @@
+<div>
+@if(bkname)
+{
+    
+   <p>The bookname is {{bkname}}</p>
+}
+@else
+{
+ 
+    <p>The bookname is not inputted</p>
+}
+</div>
+
+@if(bkprice && bkprice < 5000)
+{
+    <p>The book {{bkname}} is not costly with bookprice as {{bkprice}}</p>
+}
+@else
+{
+    <p>The book {{bkname}} is costly, with book price as {{bkprice}}</p>
+}
+
+<hr/>
+
+@if(bookarr && bookarr.length > 0)
+{
+    <p>There are {{bookarr.length}} books in the book array:-</p> 
+
+    <ul>
+        @for(bk of bookarr; track bk.bkid)
+        {
+            <li>{{bk.bkid}},{{bk.bkname}},{{bk.bkprice}}</li> 
+            
+        }
+    </ul>
+}
+@else
+{
+    <p>0 books in the array!</p>
+}
+
