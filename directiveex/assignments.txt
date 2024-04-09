@@ -1,0 +1,37 @@
+
+
+@Input()
+@Output()
+
+assignment 1:
+part 1:
+app component
+  -- define book array
+  -- book form
+  -- add book -> push that book into array
+  --> iterate the book array and pass/input bind each book as @Input to child component - book component 
+  
+
+book component--< show the details of that book
+  -- book (bookid,bookname,bookprice)
+  -- display book details in the UI
+
+------------------------------------------------------------------------------------------------------------------
+
+app component --> book component
+
+app component --> html template --> form , add book button , hr tag, @for( bookarray) --> book (bkid,bkname,bprice) 
+                                                                                      --> @Input --> book component
+                                                                                      --> book components template --> dipslay that book detail
+
+assignment 2: sibling intercommunication
+
+app component -> capture book array size emitted by book list component and show the cart size i.e. total no of books in the cart 
+
+   addbook component 
+     bookform, add book button
+
+   book list component
+     book array
+     iterate book array and show book details on UI
+     output book array size to parent app component 
