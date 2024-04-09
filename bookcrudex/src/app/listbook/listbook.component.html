@@ -1,0 +1,39 @@
+<div>
+    <button (click)="listbooks()">List All Books</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>book id</th>
+                <th>book name</th>
+                <th>book price</th>
+            </tr>
+        </thead>
+       @for(b of bookarr; track b.bkid )
+       {
+         <tr>
+            <td>{{b.bkid}}</td>
+            <td>{{b.bkname}}</td>
+            <td>{{b.bkprice}}</td>
+            <td>
+              <button (click)="delbook(b)">Delete</button>
+            </td>
+            <td>
+              <button (click)="editbook(b)">Update</button>
+            </td>
+        </tr>
+        }
+    </table>
+    <hr>
+    @if(is_edit==true)
+    {
+    <div>
+        <h3>Form to Edit the Book:</h3>
+        <input type="text" [(ngModel)]="book.bkid" placeholder="book id" disabled/>
+        <input type="text" [(ngModel)]="book.bkname" placeholder="book name"/>
+        <input type="text" [(ngModel)]="book.bkprice" placeholder="book price"/>
+        <button (click)="updatebook(book)">Update Book</button>
+    </div>
+    }
+
+</div>

@@ -1,0 +1,13 @@
+<div>
+
+    <input type="text" [(ngModel)]="book.bkid" placeholder="book id"/>
+    <input type="text" [(ngModel)]="book.bkname" placeholder="book name"/>
+    <input type="text" [(ngModel)]="book.bkprice" placeholder="book price"/>
+    <button (click)="addBook()">Add Book</button>
+    <hr>
+    @if(statusmsg!='')
+    {
+      {{statusmsg}}
+    }
+    
+</div>
